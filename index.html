@@ -126,36 +126,43 @@
   </main>
 
   <!-- footer -->
-  <section class="bg- p-10">
-    <footer class="w-10/12 mx-auto flex justify-between">
-      <nav>
-        <div class="flex gap-3">
+  <section class="bg-tcolor lg:px-10 py-12">
+    <footer class="w-10/12 mx-auto flex flex-col lg:flex-row justify-between space-y-12 lg:space-y-0">
+      <nav class="space-y-5">
+        <div class="flex gap-3 items-center">
           <img src="./asstes/logo.webp" alt="">
-          <a class="text-xl text-white">Peddy</a>
+          <a class="text-3xl font-extrabold text-white">Peddy</a>
         </div>
-        <p>Location: av. Washington 165, NY CA 54003 <br>
-          Phone: +31 85 964 47 25 <br>
-          Email: info@yourdomain.com <br>
-          Openings hours: 9.00 AM - 5.00 PM </p>
-        <div class="grid grid-flow-col gap-4">
-          <img class="w-[50px]" src="assets/instagram.png" alt="">
-          <img class="w-[50px]" src="assets/instagram.png" alt="">
-          <img class="w-[50px]" src="assets/instagram.png" alt="">
-          <img class="w-[50px]" src="assets/instagram.png" alt="">
+        <ul class="text-stone-300 space-y-1.5">
+          <li><a>Location: av. Washington 165, NY CA </a></li>
+          <li><a>54003</a></li>
+          <li><a>Phone: +31 85 964 47 25</a></li>
+          <li><a>Email: info@yourdomain.com</a></li>
+          <li><a>Openings hours: 9.00 AM - 5.00 PM</a></li>
+        </ul>
+        <div class="flex items-center gap-5">
+          <img src="./asstes/facebook.png" alt="">
+          <img src="./asstes/x.png" alt="">
+          <img src="./asstes/youtube.png" alt="">
+          <img src="./asstes/instagram.png" alt="">
         </div>
       </nav>
-      <nav class="flex flex-col">
-        <h6 class="footer-title">Useful Links</h6>
-        <a class="link link-hover">Home</a>
-        <a class="link link-hover">About Us</a>
-        <a class="link link-hover">Animals</a>
-        <a class="link link-hover">Foundation</a>
-        <a class="link link-hover">Contact</a>
+      <nav class="space-y-5">
+        <h6 class="text-lg text-white font-bold">Useful Links</h6>
+        <div class="flex flex-col space-y-2">
+          <a class="link link-hover text-stone-400">About Us</a>
+          <a class="link link-hover text-stone-400">Animals</a>
+          <a class="link link-hover text-stone-400">Home</a>
+          <a class="link link-hover text-stone-400">Foundation</a>
+          <a class="link link-hover text-stone-400">Contact</a>
+        </div>
       </nav>
-      <nav class="flex flex-col">
-        <h6 class="">Drop Your Message</h6>
-        <input type="text" placeholder="Enter your mail">
-        <button class="btn">Subscribe</button>
+      <nav class="flex flex-col space-y-5">
+        <h6 class="text-lg text-white font-bold">Drop a Message</h6>
+        <div class="grid grid-cols-1 space-y-4">
+          <input class="px-4 py-3 rounded-lg bg-zinc-800 md:w-2/5 lg:w-full" type="text" name="" id="" placeholder="Enter your email">
+          <button class="btn bg-primary border-none text-lg text-white md:w-2/5 lg:w-full">Subscribe</button>
+        </div>
       </nav>
     </footer>
   </section>
