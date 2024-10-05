@@ -37,30 +37,32 @@
 </head>
 
 <body class="font-lato">
-  <!-- navbar starts -->
-  <nav class="container mx-auto w-11/12 lg:w-10/12">
-    <div class="navbar lg:py-8">
-      <div class="navbar-start gap-3 items-center">
-        <img src="./asstes/logo.webp" alt="">
-        <a class="text-3xl font-extrabold">Peddy</a>
+  <header>
+    <!-- navbar starts -->
+    <nav class="container mx-auto w-11/12 lg:w-10/12">
+      <div class="navbar lg:py-8">
+        <div class="navbar-start gap-3 items-center">
+          <img src="./asstes/logo.webp" alt="">
+          <a class="text-3xl font-extrabold">Peddy</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 text-base">
+            <li><a>Home</a></li>
+            <li><a>Shop</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <img src="./asstes/human.png" alt="">
+        </div>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1 text-base">
-          <li><a>Home</a></li>
-          <li><a>Shop</a></li>
-          <li><a>Contact</a></li>
-        </ul>
-      </div>
-      <div class="navbar-end">
-        <img src="./asstes/human.png" alt="">
-      </div>
-    </div>
-  </nav>
-  <!-- navbar ends -->
+    </nav>
+    <!-- navbar ends -->
+  </header>
 
-  <!-- main -->
+  <!-- main section -->
   <main>
-    <!-- hero section -->
+    <!-- hero section starts-->
     <section class="container mx-auto w-11/12 lg:w-10/12">
       <div class="hero">
         <div class="hero-content text-center">
@@ -73,12 +75,13 @@
             <p>Pet adoption is transferring responsibility for a pet that another party
               previously owned. Common sources for
               adoptable pets are animal shelters, rescue groups, or other pet owners.</p>
-            <button class="btn bg-primary text-white">View More</button>
+            <button class="btn bg-primary text-white" onclick="location.href='sa-index.html'">View More</button>
             <img src="./asstes/pet.webp" alt="">
           </div>
         </div>
       </div>
     </section>
+    <!-- hero section ends-->
 
     <!-- adoption section -->
     <section class="container mx-auto w-11/12 lg:w-10/12 my-12 lg:my-24 space-y-7">
@@ -98,7 +101,7 @@
             <h3 class="text-xl font-extrabold">Dogs</h3>
           </div>
         </button>
-        <button class="flex justify-center items-center gap-5 border border-cats rounded-full px-5 py-5 bg-emerald-50">
+        <button class="flex justify-center items-center gap-5 border rounded-2xl px-5 py-5 bg-emerald-50">
           <div><img src="./asstes/cats.png" alt=""></div>
           <div>
             <h3 class="text-xl font-extrabold">Cats</h3>
@@ -119,18 +122,15 @@
       </div>
     </section>
 
-    <!-- forum section -->
-    <section class="container mx-auto lg:w-10/12 w-11/12 px-8 py-5 rounded-2xl shadow-sm grid grid-cols-3 gap-5 items-center">
-      <div id="pets" class="bg-red-200 col-span-2">
-        
-      </div>
-      <div class="bg-green-300"><button class="btn">Sort by Price</button></div>
-    </section>
+    <section class="container mx-auto w-11/12 lg:w-10/12 my-12 lg:my-24 space-y-7 grid grid-cols-4">
+      <div id="pets" class="grid lg:col-span-3">
 
-    <!-- latest post section -->
-    <section class="container mx-auto lg:w-10/12 w-11/12 *:text-center lg:my-18 my-8">
+      </div>
+
+      </div>
     </section>
   </main>
+
 
   <!-- footer -->
   <section class="bg-tcolor lg:px-10 py-12">
@@ -175,8 +175,8 @@
     </footer>
   </section>
 
-  <!-- scripts -->
-   <script src="./sa-index.js"></script>
+  <script src="./sa-index.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
