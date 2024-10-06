@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Adoption</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="counter.css"> -->
   <!-- Font: Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,16 +75,16 @@
     <section class=" container mx-auto w-11/12 mb-16">
       <div class="hero">
         <div class="hero-content text-center">
-          <div class="max-w-xl space-y-7">
+          <div class="max-w-xl space-y-5 lg:space-y-7">
             <div class="flex justify-center items-center gap-1">
-              <p class="text-xl font-bold text-gray">Bringing Families Together</p>
+              <p class="lg:text-xl font-bold text-gray">Bringing Families Together</p>
               <img src="./assets/fire.png" alt="">
             </div>
             <h1 class="font-extrabold text-2xl lg:text-5xl">Your Path to Adoption Starts Here</h1>
             <p>Pet adoption is transferring responsibility for a pet that another party
               previously owned. Common sources for
               adoptable pets are animal shelters, rescue groups, or other pet owners.</p>
-            <button class="btn btn-primary"><a href="#adopt-section">View More</a></button>
+            <button class="btn bg-primary text-white"><a href="#adopt-section">View More</a></button>
             <img src="./assets/pet.webp" alt="">
           </div>
         </div>
@@ -102,29 +104,32 @@
                 quasi. In deleniti eaque aut repudiandae et a id nisi.
               </p>
             </div>
-            <div class="flex flex-col lg:flex-row justify-center gap-5">
-              <button id="dog" class="btn btn-primary">Dogs</button>
+            <div id="button-container" class="flex flex-col lg:flex-row justify-center gap-5">
+
+              <!-- <button id="dog" class="btn btn-primary">Dogs</button>
               <button id="cat" class="btn btn-primary">Cats</button>
               <button id="rabbit" class="btn btn-primary">Rabbits</button>
-              <button id="bird" class="btn btn-primary">Birds</button>
+              <button id="bird" class="btn btn-primary">Birds</button> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="flex justify-between items-center">
-        <h3 class="font-bold text-xl">Best Deal For You</h3>
-        <button class="btn">Sort by Price</button>
+      <div class="flex justify-between md:justify-between lg:justify-between items-center p-2 md:p-3 lg:p-0">
+        <h3 class="font-bold lg:text-lg">Best Deal For You</h3>
+        <button id="sort" onclick="loadPetsSorting()" class="btn bg-primary text-white lg:text-base">Sort by
+          Price</button>
       </div>
     </section>
 
-    <section id="" class="grid grid-cols-1 md:g lg:grid-cols-3 gap-5 mb-16 container mx-auto w-11/12">
+    <section id="" class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-16 container mx-auto w-11/12">
       <!-- first div starts -->
-      <div id="pets" class="lg:col-span-2 grid lg:grid-cols-3 border border-stone-200 rounded-xl p-2">
+      <div id="pets" class="lg:col-span-2 grid md:grid-cols-2 lg:grid-cols-3 rounded-xl">
       </div>
       <!-- first div ends -->
 
       <!-- second div starts -->
-      <div id="liked-images" class="grid lg:grid-cols-2 border border-stone-200 rounded-xl gap-5 p-2"></div>
+      <div id="liked-images"
+        class="grid md:grid-cols-2  lg:grid-cols-2 auto-rows-min border border-stone-200 rounded-xl"></div>
       <!-- first div ends -->
     </section>
   </main>
@@ -164,9 +169,36 @@
   </section>
   <!-- Modal Ends -->
 
+  <!-- modal 2 -->
+  <!-- You can open the modal using ID.showModal() method -->
+  <!-- <button class="btn hidden" onclick="congrats.showModal()">open modal</button>
+  <dialog id="congrats" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+      <h3 class="text-lg font-bold">Congrats</h3>
+      <p class="py-4">You Have Adopted</p>
+      <div class="counter">1</div>
+    </div>
+  </dialog> -->
+
+  <section>
+    <button class="btn hidden" onclick="congrats.showModal()">open modal</button>
+    <dialog id="congrats" class="modal">
+      <form method="dialog" class="modal-box flex flex-col justify-center items-center text-center space-y-5">
+        <div id="modal-container">
+          <h3 class="text-lg font-bold">Congrats</h3>
+          <p class="py-4">You Have Adopted</p>
+          <div class="counter">1</div>
+        </div>
+      </form>
+    </dialog>
+  </section>
+
   <!-- footer section starts -->
-  <section class="bg-black px-5 lg:px-16 py-12">
-    <footer class="flex flex-col lg:flex-row justify-between space-y-12 lg:space-y-0">
+  <section class="bg-black py-12">
+    <footer class="flex flex-col lg:flex-row justify-between space-y-12 lg:space-y-0 p-4 container mx-auto w-11/12">
       <nav class="space-y-5">
         <div class="flex gap-3 items-center">
           <img src="./assets/logo.webp" alt="">
@@ -211,6 +243,7 @@
 
   <!-- Scripts -->
   <script src="./sa-index-3.js"></script>
+  <!-- <script src="./counter.js"></script> -->
 </body>
 
 </html>
@@ -219,94 +252,33 @@
 
 
 
-<!-- <div class="card card-compact bg-base-100 w-96 mx-auto shadow-xl p-5 space-y-3">
-  <div>
-    <img class="rounded-xl min-w-full" src=${pet.image} alt="" />
-  </div>
-  <div class="space-y-3">
-    <div class="space-y-2">
-      <h2 class="card-title">${pet.pet_name}</h2>
-      <div class="flex items-center gap-1">
-        <img src="./assets/frame1.png" alt="">
-        <p>Breed: ${pet.breed}</p>
-      </div>
-      <div class="flex items-center gap-1">
-        <img src="./assets/frame2.png" alt="">
-        <p>Birth: ${pet.date_of_birth}</p>
-      </div>
-      <div class="flex items-center gap-1">
-        <img src="./assets/frame3.png" alt="">
-        <p>Gender: ${pet.gender}</p>
-      </div>
-      <div class="flex items-center gap-1">
-        <img src="./assets/frame4.png" alt="">
-        <p>Price: ${pet.price}$</p>
-      </div>
-    </div>
-    <div class="card-actions justify-between gap-3">
-      <button onclick="loadImages(${pet.petId})" class="btn">Like</button>
-      <button class="btn">Adopt</button>
-      <button onclick="loadModalInfo(${pet.petId})" class="btn">Details</button>
-    </div>
-  </div>
-</div> -->
+<!-- //displaying main categories
+const displayButtonsOnCategory = (categories) => {
 
+for (item of categories) {
+const categoryContainer = document.getElementById('button-container');
+const btn = document.createElement('button');
+btn.classList = 'btn'
+btn.innerHTML = `<button onclick="loadCategories('${item.category}')" id="${item.category}"
+  class="flex justify-between items-center font-bold gap-2 container-btn"><img class="w-[20px]"
+    src="${item.category_icon}" /> ${item.category}</button>`;
+categoryContainer.append(btn);
+}
+} -->
 
-<!-- <div class="">
-  <figure class="w-full relative">
-    <img src=${petData.image} alt="Pets" />
-  </figure>
-  <div class="">
-    <h2 class="card-title">${petData.pet_name}</h2>
-    <p>Breed: ${petData.breed}</p>
-    <p>Birth: ${petData.date_of_birth}</p>
-    <p>Gender: ${petData.gender}</p>
-    <p>Price: ${petData.price}</p>
-  </div>
-  <div class="">
-    <h2 class="text-xl font-bold">Details Information</h2>
-    <p>${petData.pet_details}</p>
-  </div>
-</div> -->
-
-<!-- <div class="p-3">
-  <div class="card shadow p-3">
-    <div class="px-3"><img src=${petData.image} class="rounded-xl" alt=""></div>
-    <div class="card-body">
-      <div class="space-y-2">
-        <h2 class="card-title">${petData.pet_name}</h2>
-        <div class="flex items-center gap-1">
-          <img src="./assets/frame1.png" alt="">
-          <p>Breed: ${petData.breed}</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <img src="./assets/frame2.png" alt="">
-          <p>Birth: ${petData.date_of_birth}</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <img src="./assets/frame3.png" alt="">
-          <p>Gender: ${petData.gender}</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <img src="./assets/frame4.png" alt="">
-          <p>Price: ${petData.price}$</p>
-        </div>
+<!-- //display modal info
+const showModalInfo = (petData) => {
+  document.getElementById('modal-container').innerHTML = "";
+  const card = document.createElement('div');
+  card.classList = 'card card-compact';
+  card.innerHTML = `
         <div class="">
-          <h2 class="text-xl font-bold">Details Information</h2>
-          <p>${petData.pet_details}</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-<!-- <div class="">
-  <div class="card space-y-5">
+  <div class="card space-y-4">
     <div class="">
       <img src=${petData.image} class="rounded-xl w-full" alt="">
     </div>
     <div>
-      <div class="space-y-1">
+      <div class="space-y-2">
         <h2 class="card-title">${petData.pet_name}</h2>
         <div class="flex items-center gap-1">
           <img src="./assets/frame1.png" alt="">
@@ -336,8 +308,114 @@
       <button
         class="btn w-full bg-gray-200 btn-md hover:bg-primary hover:text-white transition-colors ease-in duration-100 text-lg">Close</button>
     </div>
-  </div> -->
+  </div>
+        `;
+  document.getElementById('modal-container').append(card);
+  // console.log(petData);
+  // document.getElementById('modal-container').innerHTML = `
+  // <img src= ${petData.image} alt="Pets" />`;
+  document.getElementById('showModalData').click();
+} -->
 
-<!-- <div class="p-3 rounded-xl">
-  <img class="h-[200px] w-[300px]" src=${petData.image} alt="Pets" />
+
+<!-- //like images
+const likeImage = (petData) => {
+  // document.getElementById('liked-images').innerHTML = `<div>
+  // <img class="h-[200px] w-[300px] p-3" src= ${petData.image} alt="Pets" />
+  // </div>`;
+  const imageContainer = document.getElementById('liked-images');
+  const card = document.createElement('div');
+  card.classList = 'card card-compact';
+  card.innerHTML = `<div class="p-5">
+  <img class="h-[190px] rounded-xl" src=${petData.image} alt="Pets" />
+</div>`;
+  imageContainer.appendChild(card)
+
+} -->
+
+
+<!-- //display Pets
+const displayPets = (pets) => {
+  const petsContainer = document.getElementById('pets');
+  petsContainer.innerHTML = ''
+  if (pets.length === 0) {
+    petsContainer.classList.remove("grid");
+    petsContainer.innerHTML = `<div class="hero">
+        <div class="hero-content text-center">
+      <div class="flex flex-col justify-center items-center space-y-5">
+        <img src="./assets/error.webp" alt="">
+        <h1 class="text-4xl font-bold">No Information Available</h1>
+        <p class="">This subject-related information is not available.</p>
+      </div>
+    </div>
+  </div>
+        `;
+  }
+  else {
+    petsContainer.classList.add('grid');
+  }
+  pets.forEach((pet) => {
+    //console.log(pet);
+    const card = document.createElement('div');
+    card.classList = 'card card-compact';
+    card.innerHTML = `
+        <div class="p-3">
+  <div class="card shadow p-3">
+    <div class="px-3 pt-3"><img src=${pet.image} class="rounded-xl" alt=""></div>
+    <div class="card-body">
+      <div class="space-y-2">
+      <h2 class="card-title">${pet.pet_name}</h2>
+      <div class="flex items-center gap-1">
+        <img src="./assets/frame1.png" alt="">
+        <p>Breed: ${pet.breed}</p>
+      </div>
+      <div class="flex items-center gap-1">
+        <img src="./assets/frame2.png" alt="">
+        <p>Birth: ${pet.date_of_birth}</p>
+      </div>
+      <div class="flex items-center gap-1">
+        <img src="./assets/frame3.png" alt="">
+        <p>Gender: ${pet.gender}</p>
+      </div>
+      <div class="flex items-center gap-1">
+        <img src="./assets/frame4.png" alt="">
+        <p>Price: ${pet.price}$</p>
+      </div>
+    </div>
+      <div class="card-actions justify-between">
+      <button onclick="loadImages(${pet.petId})" class="btn">Like</button>
+      <button onclick="modal()" class="btn">Adopt</button>
+      <button onclick="loadModalInfo(${pet.petId})" class="btn">Details</button>
+    </div>
+    </div>
+  </div>
+</div>
+        `
+    petsContainer.append(card);
+
+  })
+} -->
+
+
+<!-- <div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content text-center">
+    <div class="flex flex-col justify-center items-center space-y-5">
+      <img src="./assets/error.webp" alt="">
+      <h1 class="text-4xl font-bold">No Information Available</h1>
+      <p class="">This subject-related information is not available.</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
 </div> -->
