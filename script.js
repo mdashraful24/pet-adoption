@@ -81,7 +81,7 @@ const showLikesImage = (petData) => {
     const card = document.createElement('div');
     card.classList = 'card card-compact';
     card.innerHTML = `
-    <div class="p-3"> <img class="rounded-xl" src= ${petData.image} alt="pets" /> </div>`;
+    <div class="p-3"> <img class="rounded-xl w-auto h-auto mx-auto" src= ${petData.image} alt="pets" /> </div>`;
     imageContainer.appendChild(card)
 }
 //Displaying Pets
@@ -91,12 +91,14 @@ const displayNoPetsInfo = (pets) => {
     if (pets.length === 0) {
         petsContainer.classList.remove("grid");
         petsContainer.innerHTML = `
-    <div class="hero bg-base-200 h-full py-3 rounded-xl">
-        <div class="hero-content text-center">
-            <div class="flex flex-col justify-center items-center space-y-5">
-                <img src="./assets/error.webp" alt="">
-                <h1 class="text-4xl font-bold">No Information Available</h1>
-                <p class="">This subject-related information is not available.</p>
+    <div class="mt-[0.5rem]">
+        <div class="hero bg-base-200 p-5 rounded-xl">
+            <div class="hero-content text-center">
+                <div class="flex flex-col justify-center items-center space-y-5">
+                    <img src="./assets/error.webp" alt="">
+                    <h1 class="text-4xl font-bold">No Information Available</h1>
+                    <p class="">This subject-related information is not available.</p>
+                </div>
             </div>
         </div>
     </div>
