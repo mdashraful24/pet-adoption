@@ -81,7 +81,7 @@ const showLikesImage = (petData) => {
     const card = document.createElement('div');
     card.classList = 'card card-compact';
     card.innerHTML = `
-    <div class="p-3"> <img class="rounded-xl w-auto h-auto mx-auto" src= ${petData.image} alt="pets" /> </div>`;
+    <div class="p-3"> <img class="rounded-xl w-full h-[200px] mx-auto" src= ${petData.image} alt="pets" /> </div>`;
     imageContainer.appendChild(card)
 }
 //Displaying Pets
