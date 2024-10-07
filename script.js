@@ -25,9 +25,10 @@ const loadAllCategories = (id) => {
             removeActiveEl();
             document.getElementById(id).classList.add('bg-category');
             document.getElementById('pets-cards').innerHTML = "";
-            document.getElementById('pets-cards').innerHTML = `<div id="loading" class="flex flex-col justify-center items-center h-screen">
-                    <span class="loading loading-bars loading-lg"></span>
-                </div>`;
+            document.getElementById('pets-cards').innerHTML = `
+            <div id="loading" class="flex flex-col justify-center items-center h-screen">
+                <span class="loading loading-bars loading-lg"></span>
+            </div>`;
             setTimeout(() => {
                 displayNoPetsInfo(data.data);
             }, 2000);
@@ -79,7 +80,8 @@ const showLikesImage = (petData) => {
     const imageContainer = document.getElementById('liked-pets-images');
     const card = document.createElement('div');
     card.classList = 'card card-compact';
-    card.innerHTML = `<div class="p-3"> <img class="rounded-xl" src= ${petData.image} alt="pets" /> </div>`;
+    card.innerHTML = `
+    <div class="p-3"> <img class="rounded-xl" src= ${petData.image} alt="pets" /> </div>`;
     imageContainer.appendChild(card)
 }
 //Displaying Pets
@@ -107,31 +109,31 @@ const displayNoPetsInfo = (pets) => {
         const card = document.createElement('div');
         card.classList = 'card card-compact';
         card.innerHTML = `
-    <div class="p-2">
-        <div class="card border border-stone-200">
-            <div class="px-3">
-                <img src=${pet.image} class="w-full md:h-[200px] lg:h-[200px] rounded-xl mt-3" alt="">
-            </div>
-            <div class="card-body">
-                <div class="space-y-2 mb-2">
-                    <h2 class="card-title">${pet.pet_name}</h2>
-                    <div class="flex items-center gap-1">
-                        <img src="./assets/frame1.png" alt="">
-                        <p>Breed: ${pet.breed === undefined || pet.breed === null ? 'Not Available' : pet.breed}</p>
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <img src="./assets/frame2.png" alt="">
-                        <p>Birth: ${pet.date_of_birth === undefined || pet.date_of_birth === null ? 'Not Available' : pet.date_of_birth}</p>
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <img src="./assets/frame3.png" alt="">
-                        <p>Gender: ${pet.gender === undefined || pet.gender === null ? 'Not Available' : pet.gender}</p>
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <img src="./assets/frame4.png" alt="">
-                        <p>Price: ${pet.price === undefined || pet.price === null ? 'Not Available' : pet.price}</p>
-                    </div>
+        <div class="p-2">
+            <div class="card border border-stone-200">
+                <div class="px-3">
+                    <img src=${pet.image} class="w-full md:h-[200px] lg:h-[200px] rounded-xl mt-3" alt="">
                 </div>
+                <div class="card-body">
+                    <div class="space-y-2 mb-2">
+                        <h2 class="card-title">${pet.pet_name}</h2>
+                        <div class="flex items-center gap-1">
+                            <img src="./assets/frame1.png" alt="">
+                            <p>Breed: ${pet.breed === undefined || pet.breed === null ? 'Not Available' : pet.breed}</p>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <img src="./assets/frame2.png" alt="">
+                            <p>Birth: ${pet.date_of_birth === undefined || pet.date_of_birth === null ? 'Not Available' : pet.date_of_birth}</p>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <img src="./assets/frame3.png" alt="">
+                            <p>Gender: ${pet.gender === undefined || pet.gender === null ? 'Not Available' : pet.gender}</p>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <img src="./assets/frame4.png" alt="">
+                            <p>Price: ${pet.price === undefined || pet.price === null ? 'Not Available' : pet.price}</p>
+                        </div>
+                    </div>
                 <div class="card-actions justify-around md:justify-between lg:justify-between">
                     <button onclick="loadLikeImages(${pet.petId})" class="btn bg-white hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100 border-teal-500 font-extrabold"><i
                             class="fa-regular fa-thumbs-up w-10"></i></button>
@@ -154,18 +156,18 @@ const showDetailsModalInfo = (petData) => {
     const card = document.createElement('div');
     card.classList = 'card card-compact';
     card.innerHTML = `
-        <div class="">
-    <div class="card space-y-4">
-        <div class="">
-            <img src=${petData.image} class="rounded-xl w-full" alt="">
-        </div>
-        <div>
-            <div class="space-y-2">
-                <h2 class="card-title">${petData.pet_name}</h2>
-                <div class="flex items-center gap-1">
-                    <img src="./assets/frame1.png" alt="">
-                    <p>Breed: ${petData.breed === undefined || petData.breed === null ? 'Not Available' : petData.breed}
-                    </p>
+    <div class="">
+        <div class="card space-y-4">
+            <div class="">
+                <img src=${petData.image} class="rounded-xl w-full" alt="">
+            </div>
+            <div>
+                <div class="space-y-2">
+                    <h2 class="card-title">${petData.pet_name}</h2>
+                    <div class="flex items-center gap-1">
+                        <img src="./assets/frame1.png" alt="">
+                        <p>Breed: ${petData.breed === undefined || petData.breed === null ? 'Not Available' : petData.breed}
+                        </p>
                 </div>
                 <div class="flex items-center gap-1">
                     <img src="./assets/frame2.png" alt="">
@@ -194,7 +196,7 @@ const showDetailsModalInfo = (petData) => {
                 class="btn w-full text-lg text-teal-500 bg-teal-50 hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100">Close</button>
         </div>
     </div>
-        `;
+    `;
     document.getElementById('modal-containers').append(card);
     document.getElementById('showModalInfo').click();
 }
@@ -219,9 +221,10 @@ const modal = () => {
 // Loading Spinner
 document.getElementById('sorting').addEventListener('click', function () {
     document.getElementById('pets-cards').innerHTML = "";
-    document.getElementById('pets-cards').innerHTML = `<div id="loading" class="flex flex-col justify-center items-center min-h-screen">
+    document.getElementById('pets-cards').innerHTML = `
+        <div id="loading" class="flex flex-col justify-center items-center min-h-screen">
             <span class="loading loading-bars loading-lg"></span>
-            </div>`;
+        </div>`;
     setTimeout(() => {
         loadPetsSorting();
     }, 2000);
