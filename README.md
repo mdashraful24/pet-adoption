@@ -4,18 +4,18 @@ Description: In this project, I developed a Pet Adoption website that retrieves 
 
 Five key features of the project:
 
-    • Responsive Design
     • Dynamic Categories
-    • Pet Information
-    • Modal Dialogs
-    • Grid Layout
+    • Detailed Information Visualization
+    • Option to be Like and Adopt
+    • Loading Spinner
+    • Handle Null or Undefined Values
 
 ES6 features used:
 
     • Arrow Functions
+    • Destructuring Assignment
     • Template Literals
-    • Destructuring
     • Promises
-    • Let/Const
+    • Let and Const Keywords
 
 Live link: https://ph-b10a6-pet-adoption.netlify.app/
