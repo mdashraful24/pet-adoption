@@ -207,7 +207,7 @@ const showDetailsModalInfo = (petData) => {
         </div>
         <div>
             <button
-                class="btn w-full text-lg text-teal-500 bg-teal-50 hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100">Close</button>
+                class="btn w-full text-lg text-teal-600 bg-teal-50 hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100">Close</button>
         </div>
     </div>
     `;
