@@ -6,7 +6,7 @@ const loadAllPets = () => {
             document.getElementById('pets-cards').classList.remove('grid');
             document.getElementById('pets-cards').innerHTML = "";
             document.getElementById('pets-cards').innerHTML = `
-            <div id="loading" class="flex flex-col justify-center items-center h-screen">
+            <div id="loading" class="flex flex-col justify-center items-center min-h-screen">
                 <span class="loading loading-bars loading-lg"></span>
             </div>`;
             setTimeout(() => {
@@ -37,7 +37,7 @@ const loadAllCategories = (id) => {
             document.getElementById(id).classList.add('bg-category');
             document.getElementById('pets-cards').innerHTML = "";
             document.getElementById('pets-cards').innerHTML = `
-            <div id="loading" class="flex flex-col justify-center items-center h-screen">
+            <div id="loading" class="flex flex-col justify-center items-center min-h-screen">
                 <span class="loading loading-bars loading-lg"></span>
             </div>`;
             setTimeout(() => {
