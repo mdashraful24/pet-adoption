@@ -145,7 +145,7 @@ const displayNoPetsInfo = (pets) => {
                         </div>
                         <div class="flex items-center gap-1">
                             <img src="./assets/frame4.png" alt="">
-                            <p>Price: ${pet.price === undefined || pet.price === null ? 'Not Available' : pet.price}</p>
+                            <p>Price: ${pet.price === undefined || pet.price === null ? 'Not Available' : `${pet.price}$`}</p>
                         </div>
                     </div>
                 <div class="card-actions justify-around md:justify-between lg:justify-between">
@@ -194,7 +194,7 @@ const showDetailsModalInfo = (petData) => {
                 </div>
                 <div class="flex items-center gap-1">
                     <img src="./assets/frame4.png" alt="">
-                    <p>Price: ${petData.price === undefined || petData.price === null ? 'Not Available' : petData.price}</p>
+                    <p>Price: ${petData.price === undefined || petData.price === null ? 'Not Available' : `${petData.price}$`}</p>
                 </div>
             </div>
         </div>
