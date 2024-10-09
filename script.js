@@ -2,7 +2,17 @@
 const loadAllPets = () => {
     fetch("https://openapi.programming-hero.com/api/peddy/pets")
         .then((res) => res.json())
-        .then((data) => displayNoPetsInfo(data.pets))
+        .then((data) => {
+            document.getElementById('pets-cards').classList.remove('grid');
+            document.getElementById('pets-cards').innerHTML = "";
+            document.getElementById('pets-cards').innerHTML = `
+            <div id="loading" class="flex flex-col justify-center items-center h-screen">
+                <span class="loading loading-bars loading-lg"></span>
+            </div>`;
+            setTimeout(() => {
+                displayNoPetsInfo(data.pets);
+            }, 2000);
+        })
         .catch((error) => console.log(error));
 };
 const loadPetsSorting = () => {
@@ -22,6 +32,7 @@ const loadAllCategories = (id) => {
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
         .then((res) => res.json())
         .then((data) => {
+            document.getElementById('pets-cards').classList.remove('grid');
             removeActiveEl();
             document.getElementById(id).classList.add('bg-category');
             document.getElementById('pets-cards').innerHTML = "";
@@ -87,6 +98,7 @@ const showLikesImage = (petData) => {
 //Displaying Pets
 const displayNoPetsInfo = (pets) => {
     const petsContainer = document.getElementById('pets-cards');
+    document.getElementById('pets-cards').classList.add('grid');
     petsContainer.innerHTML = ''
     if (pets.length === 0) {
         petsContainer.classList.remove("grid");
@@ -139,7 +151,7 @@ const displayNoPetsInfo = (pets) => {
                 <div class="card-actions justify-around md:justify-between lg:justify-between">
                     <button onclick="loadLikeImages(${pet.petId})" class="btn bg-white hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100 border-teal-500 font-extrabold"><i
                             class="fa-regular fa-thumbs-up w-10"></i></button>
-                    <button onclick="modal()" class="btn bg-white hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100 border-teal-500 font-extrabold">Adopt</button>
+                    <button onclick="modal(); this.disabled = true;" class="btn bg-white hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100 border-teal-500 font-extrabold">Adopt</button>
                     <button onclick="detailsModalInfo(${pet.petId})"
                         class="btn bg-white hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100 border-teal-500 font-extrabold">Details</button>
                 </div>
@@ -222,6 +234,7 @@ const modal = () => {
 };
 // Loading Spinner
 document.getElementById('sorting').addEventListener('click', function () {
+    document.getElementById('pets-cards').classList.remove('grid');
     document.getElementById('pets-cards').innerHTML = "";
     document.getElementById('pets-cards').innerHTML = `
         <div id="loading" class="flex flex-col justify-center items-center min-h-screen">
