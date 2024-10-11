@@ -171,33 +171,46 @@ const showDetailsModalInfo = (petData) => {
     card.classList = 'card card-compact';
     card.innerHTML = `
     <div class="">
-        <div class="card space-y-4">
-            <div class="">
-                <img src=${petData.image} class="rounded-lg w-full" alt="">
-            </div>
+    <div class="card space-y-4">
+        <div class="">
+            <img src=${petData.image} class="rounded-lg w-full" alt="">
+        </div>
+        <div>
+        <div class="space-y-2">
+            <h2 class="card-title">${petData.pet_name}</h2>
+            <div class="flex items-center gap-5">
             <div>
-                <div class="space-y-2">
-                    <h2 class="card-title">${petData.pet_name}</h2>
-                    <div class="flex items-center gap-1">
-                        <img src="./assets/frame1.png" alt="">
-                        <p>Breed: ${petData.breed === undefined || petData.breed === null ? 'Not Available' : petData.breed}
-                        </p>
-                </div>
+            <div class="flex gap-1">
+                <img src="./assets/frame1.png" alt="">
+                <p>Breed: ${petData.breed === undefined || petData.breed === null ? 'Not Available' : petData.breed}
+                </p>
+            </div>
+            <div class="flex items-center gap-1">
+                <img src="./assets/frame3.png" alt="">
+                <p>Gender: ${petData.gender === undefined || petData.gender === null ? 'Not Available' : petData.gender}
+                </p>
+            </div>
+            <div class="flex items-center gap-1">
+                <img src="./assets/frame3.png" alt="">
+                <p>Vaccinated status: ${petData.vaccinated_status === undefined || petData.vaccinated_status === null ?
+            'Null'
+            : petData.vaccinated_status}</p>
+            </div>
+            </div>
+            <div class="-mt-7">
                 <div class="flex items-center gap-1">
                     <img src="./assets/frame2.png" alt="">
-                    <p>Birth: ${petData.date_of_birth === undefined || petData.date_of_birth === null ? "Not Available" :
-            petData.date_of_birth}</p>
-                </div>
-                <div class="flex items-center gap-1">
-                    <img src="./assets/frame3.png" alt="">
-                    <p>Gender: ${petData.gender === undefined || petData.gender === null ? 'Not Available' : petData.gender}</p>
+                    <p>Birth: ${petData.date_of_birth === undefined || petData.date_of_birth === null ? "Not Available" : petData.date_of_birth}</p>
                 </div>
                 <div class="flex items-center gap-1">
                     <img src="./assets/frame4.png" alt="">
-                    <p>Price: ${petData.price === undefined || petData.price === null ? 'Not Available' : `${petData.price}$`}</p>
+                    <p>Price: ${petData.price === undefined || petData.price === null ? 'Not Available' : `${petData.price}$`}
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
         <div>
             <div class="text-justify space-y-2">
                 <h2 class="text-xl font-bold">Details Information</h2>
@@ -207,7 +220,8 @@ const showDetailsModalInfo = (petData) => {
         </div>
         <div>
             <button
-                class="btn w-full text-lg text-teal-600 bg-teal-50 hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100">Close</button>
+            class="btn w-full text-lg text-teal-600 bg-teal-50 hover:bg-bgPrimary hover:text-white transition-colors ease-in duration-100">Close</button>
+        </div>
         </div>
     </div>
     `;
