@@ -173,7 +173,7 @@ const showDetailsModalInfo = (petData) => {
     <div class="">
         <div class="card space-y-4">
             <div class="">
-                <img src=${petData.image} class="rounded-xl w-full" alt="">
+                <img src=${petData.image} class="rounded-lg w-full" alt="">
             </div>
             <div>
                 <div class="space-y-2">
